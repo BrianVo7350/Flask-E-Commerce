@@ -8,3 +8,7 @@ from flask import flash, redirect, render_template, request, url_for
 def homePage():
     return render_template('index.html')
 
+# Temporary fake product 
+@app.route('/product')
+def fakeProductPage():
+    return render_template('product.html')
