@@ -7,3 +7,4 @@ from flask import flash, redirect, render_template, request, url_for
 @app.route('/')
 def homePage():
     return render_template('index.html')
+
