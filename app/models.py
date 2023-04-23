@@ -27,11 +27,11 @@ class Users(db.Model,UserMixin):
         db.session.delete(self)
         db.session.commit()
 
-class Product(db.Model):
-    id = db.Column(db.Integer, Primary_key=True)
+class Products(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(100), nullable = False, unique=True)
     price = db.Column(db.Float, nullable = False)
-    description = db.Column(db.String(300), nullable = False)
+    description = db.Column(db.String(500), nullable = False)
     image_url = db.Column(db.String)
 
     def __init__(self, product_name, price, description, image_url):

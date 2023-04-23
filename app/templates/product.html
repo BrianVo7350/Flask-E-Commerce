@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="product_header">LG: 65" Class C2 Series OLED evo 4K UHD Smart webOS TV</h1>
+<h1 class="product_header">{{product.product_name}}</h1>
 
-<img class="product_p_img" src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6501/6501491_bd.jpg" width="450" height="300">
+<img class="product_p_img" src="{{product.image_url}}" width="450" height="300">
 
 
-<p class="product_d">The Award-Winning¹ LG OLED C2 Is Better Than Ever. The versatile LG OLED C Series has gotten even more impressive with
-brighter colors, a new, more advanced processor and a sleeker, slimmer bezel. Self-lit LG OLED pixels create beautiful
-picture quality with infinite contrast, perfect black and over a billion colors, now even brighter.</p>
-<p class="product_d">Price: $1,399.99</p>
+<p class="product_d">{{product.description}}</p>
+<p class="product_d">Price: ${{"{:,.2f}".format(product.price)}}</p>
 
 
 {% if current_user.is_authenticated %}
