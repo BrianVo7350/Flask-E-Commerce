@@ -26,3 +26,27 @@ class Users(db.Model,UserMixin):
     def deleteFromDB(self):
         db.session.delete(self)
         db.session.commit()
+
+class Product(db.Model):
+    id = db.Column(db.Integer, Primary_key=True)
+    product_name = db.Column(db.String(100), nullable = False, unique=True)
+    price = db.Column(db.Float, nullable = False)
+    description = db.Column(db.String(300), nullable = False)
+    image_url = db.Column(db.String)
+
+    def __init__(self, product_name, price, description, image_url):
+        self.product_name = product_name
+        self.price = price
+        self.description = description
+        self.image_url = image_url
+
+    def saveToDB(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def deleteFromDB(self):
+        db.session.delete(self)
+        db.session.commit()
+    
+    
+
