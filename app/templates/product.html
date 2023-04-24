@@ -12,7 +12,7 @@
 {% if current_user.is_authenticated %}
 
 <div class="button-holder">
-    <a class='btn btn-success product-page-button'>Add To Cart</a>
+    <a href="/additem/{{product.id}}" class='btn btn-success product-page-button'>Add To Cart</a>
 </div>
 
 {% endif %}
